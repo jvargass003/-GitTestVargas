@@ -1,6 +1,9 @@
 import cv2
 import numpy as np
 class Modelos():
+	def init(self):
+		print("Nueva modificacion")
+		
 	def RGB(self,imagen):
 		img = cv2.cvtColor(imagen, cv2.COLOR_BGR2RGB)
 		negra = np.zeros(img.shape[:2], dtype='uint8')
@@ -10,7 +13,7 @@ class Modelos():
 		cv2.imshow("R", cv2.merge([negra,negra,R]))
 		cv2.imshow("Original", cv2.merge([R,G,B]))
 		cv2.waitKey()
-	
+
 	def HSI(self,imagen):
 		img = cv2.cvtColor(imagen, cv2.COLOR_BGR2HLS)
 		negra = np.zeros(img.shape[:2], dtype='uint8')
@@ -82,4 +85,3 @@ while(True):
 		modelo.CMYK(imagen)
 	elif opcion > 5:
 		print("Invalido")
-
